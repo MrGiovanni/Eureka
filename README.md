@@ -78,6 +78,14 @@ Check the graphical view of Agave here: https://rcstatus.asu.edu/agave/smallstat
 ##### Shared folder with unlimited space in ASU GPU:
 zzhou82@agave.asu.edu:/scratch/zzhou82/
 
+##### rclone
+- Documentation: https://asurc.atlassian.net/wiki/spaces/RC/pages/61833262/Google+Drive+rclone
+
+1. Log into the [Google API Console](https://console.developers.google.com/) with your Google account.
+2. Create a new project (ChestX-ray14)
+3. Enable API (search for `Google Drive API` in the box)
+4. Click `Credentials`, select `Google Drive API`, `Other UI (e.g. Windows, CLI tool)`, and `user data`
+
 
 # Remotely Jupyter notebook
 ##### 1. Open Cisco AnyConnect Secure Mobility Client
