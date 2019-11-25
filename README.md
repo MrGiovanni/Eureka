@@ -1,10 +1,10 @@
 # Connect to ASU VPN
-### 1. Open Cisco AnyConnect Secure Mobility Client
+##### 1. Open Cisco AnyConnect Secure Mobility Client
 Type in: `sslvpn.asu.edu` and click `Connect`
 
-### 2. Type in user name (asu email) and password
+##### 2. Type in user name (asu email) and password
 
-### 3. Remotely access the lab machines
+##### 3. Remotely access the lab machines
 ```bash
 ssh zongwei@t4-host.dhcp.asu.edu -X
 exit
@@ -22,7 +22,7 @@ squeue -u zzhou82
 scancel *** (JOBID)
 ```
 
-### An example of shell scripts
+##### An example of shell scripts
 ```
 #!/bin/bash
 #SBATCH -N 1
@@ -50,23 +50,23 @@ python3.6 -W ignore Genesis_ImageNet_2D.py --note autoencoder --rescale_rate 0.1
 ```
 More examples and explanations can be found at https://rcstatus.asu.edu/agave/howto/gpu.php
 
-### Shared folder with unlimited space in ASU GPU:
+##### Shared folder with unlimited space in ASU GPU:
 zzhou82@agave.asu.edu:/scratch/zzhou82/
 
 
 # Remotely Jupyter notebook
-### 1. Open Cisco AnyConnect Secure Mobility Client
+##### 1. Open Cisco AnyConnect Secure Mobility Client
 Type in: `sslvpn.asu.edu` and click `Connect`
 
-### 2. Type in user name (asu email) and password
+##### 2. Type in user name (asu email) and password
 
-### 3. Set up a Jupyter notebook in the remote machine
+##### 3. Set up a Jupyter notebook in the remote machine
 ```bash
 ssh zongwei@t4-host.dhcp.asu.edu -X
 nohup jupyter notebook --no-browser --notebook-dir='/mnt/dfs/zongwei' --port=8881 > /home/zongwei/jupyter.log &
 ```
 
-### 4. Get the link
+##### 4. Get the link
 ```bash
 cat /home/zongwei/jupyter.log
 ```
@@ -87,14 +87,14 @@ http://localhost:8881/?token=7cc992537c1209286361db906cff0128670858e0725925f5
 [I 00:02:53.058 NotebookApp] Adapting to protocol v5.1 for kernel 4cbe272f-abf8-4751-af89-392f0c7b0890
 ```
 
-### 5. Copy the link and paste it to your own laptop browser. In the previous example, the link is http://localhost:8881/?token=7cc992537c1209286361db906cff0128670858e0725925f5
+##### 5. Copy the link and paste it to your own laptop browser. In the previous example, the link is http://localhost:8881/?token=7cc992537c1209286361db906cff0128670858e0725925f5
 
-### 6. Set up in your laptop terminal
+##### 6. Set up in your laptop terminal
 ```bash
 ssh -N -f -L localhost:8881:localhost:8881 zongwei@t4-host.dhcp.asu.edu
 ```
 
-### 7. Remember to kill the process in both client (laptop) and server (t4-host.dhcp.asu.edu) when finished.
+##### 7. Remember to kill the process in both client (laptop) and server (t4-host.dhcp.asu.edu) when finished.
 ```bash
 lsof -ti:8881| xargs kill -9
 ```
@@ -103,7 +103,7 @@ lsof -ti:8881| xargs kill -9
 ```bash
 git clone https://github.com/MrGiovanni/ModelsGenesis.git
 ```
-### Push the local changes on the website
+##### Push the local changes on the website
 ```bash
 git add .
 git commit -am "make some comments "
@@ -122,7 +122,7 @@ diskutil unmount force /Users/zongwei.zhou/Documents/dfs/
 ```
 
 # Miniconda
-### Check current existing conda environments
+##### Check current existing conda environments
 ```bash
 conda env list
 ```
@@ -134,51 +134,63 @@ caffe /home/zongwei/miniconda3/envs/caffe
 root * /home/zongwei/miniconda3
 ```
 
-### Create a new conda environment named "env_name"
+##### Create a new conda environment named "env_name"
 ```bash
 conda create -n env_name python=2.7
 ```
 
-### Delete a conda environment named "env_name"
+##### Delete a conda environment named "env_name"
 ```bash
 conda env remove -n env_name
 ```
 
-### Activate "env_name" environment (independent from other conda environments). So if you mess up one environment, it would not affect on other environment
+##### Activate "env_name" environment (independent from other conda environments). So if you mess up one environment, it would not affect on other environment
 ```bash
 source activate env_name
 ```
 
-### Deactivate current environment
+##### Deactivate current environment
 ```bash
 source deactivate
 ```
 
-### Install the packages you may need
+##### Install the packages you may need
 ```bash
 pip install opencv-python keras==2.1.3 tensorflow-gpu==1.4.0 pillow tqdm scikit-image sklearn photutils simpleitk
 ```
 
-# About Ubuntu
+# Random things about Ubuntu
 ##### Give sudoer permission
 ```bash
 sudo su
 ```
 
-$ nvidia-smi -l 1
-Check GPU information
+##### Check GPU information
+```
+nvidia-smi -l 1
+```
 
+##### Check CPU information
+```
 htop
-Check CPU information
+```
 
-$ echo $PATH | tr ":" "\n" | nl
-Show system path
+##### Show system path
+```
+echo $PATH | tr ":" "\n" | nl
+```
 
-$ sudo dpkg -i teamviewer_12.0.71510_i386.deb
-Install .deb file
+##### Install .deb file
+```
+sudo dpkg -i teamviewer_12.0.71510_i386.deb
+```
 
+##### Check the size of file
+```
 ls -lh filename
-Check the size of file
+```
 
+##### Check the disc space used and left in the current address
+```
 df -h .
-Check the disc space used and left in the current address
+```
