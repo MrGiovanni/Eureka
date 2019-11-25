@@ -50,6 +50,8 @@ python3.6 -W ignore Genesis_ImageNet_2D.py --note autoencoder --rescale_rate 0.1
 ```
 More examples and explanations can be found at https://rcstatus.asu.edu/agave/howto/gpu.php
 
+Check the ASU GPU usage status here: https://rcstatus.asu.edu/agave/smallstatus.php
+
 ##### Shared folder with unlimited space in ASU GPU:
 zzhou82@agave.asu.edu:/scratch/zzhou82/
 
