@@ -86,6 +86,33 @@ zzhou82@agave.asu.edu:/scratch/zzhou82/
 3. Enable API (search for `Google Drive API` in the box)
 4. Click `Credentials`, select `Google Drive API`, `Other UI (e.g. Windows, CLI tool)`, and `user data`
 
+- interactive -t 15 -p debug -q wildfire
+- module load rclone/1.43
+- rclone config
+```
+2019/11/25 14:51:04 NOTICE: Config file "/home/zzhou82/.config/rclone/rclone.conf" not found - using defaults
+No remotes found - make a new one
+n) New remote
+s) Set configuration password
+q) Quit config
+n/s/q> n
+name> TCTEST
+Storage> 11
+client_id> 286898379307-jn6sfv3uj2k6h2sra6431j85bo7eulgr.apps.googleusercontent.com
+client_secret> 8gZi5Zi-ZXPIOPT9Iebd1Vw1
+scope> 1
+root_folder_id> 
+Edit advanced config? (y/n)
+y) Yes
+n) No
+y/n> n
+y/n> n
+Enter verification code> 4/tgHCI_eS0nNKsS-4m0sxAodOBagGrIiaLRTCgBzYDb6xIlYoLVPgqqc
+y/n> y
+Enter a Team Drive ID> 1
+y/e/d> y
+cd .config/rclone/
+```
 
 # Remotely Jupyter notebook
 ##### 1. Open Cisco AnyConnect Secure Mobility Client
