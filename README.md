@@ -98,8 +98,8 @@ q) Quit config
 n/s/q> n
 name> TCTEST
 Storage> 11
-client_id> 286898379307-jn6sfv3uj2k6h2sra6431j85bo7eulgr.apps.googleusercontent.com
-client_secret> 8gZi5Zi-ZXPIOPT9Iebd1Vw1
+client_id> ***
+client_secret> ***
 scope> 1
 root_folder_id> 
 Edit advanced config? (y/n)
@@ -107,7 +107,7 @@ y) Yes
 n) No
 y/n> n
 y/n> n
-Enter verification code> 4/tgHCI_eS0nNKsS-4m0sxAodOBagGrIiaLRTCgBzYDb6xIlYoLVPgqqc
+Enter verification code> ***
 y/n> y
 Enter a Team Drive ID> 1
 y/e/d> y
