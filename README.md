@@ -13,16 +13,20 @@ scp zongwei@t4-host.dhcp.asu.edu:/mnt/dfs/zongwei/debug.py /Users/zongwei.zhou/
 ```
 
 # Access ASU GPU cluster
+- Credit to [ASU Research Computing](https://rcstatus.asu.edu/agave/)
+- For any assistance please contact: [support@hpchelp.asu.edu](support@hpchelp.asu.edu)
+##### Create an account at https://cores.research.asu.edu/research-computing/about-rc then you are good to go
 ```bash
 ssh -Y zzhou82@agave.asu.edu
-scp /Users/zongwei.zhou/debug.py zzhou82@agave.asu.edu:/home/zzhou82/zongwei.zhou/
+scp /Users/zongwei.zhou/debug.py zzhou82@agave.asu.edu:/home/zzhou82/zongwei.zhou/ # Transferring files
 pip install simpleitk photutils tifffile libtiff pydot --user
-sbatch --error=logs/run_resnet50.out --output=logs/run_resnet50.out run_script.sh resnet50
-squeue -u zzhou82
+sbatch --error=logs/run_resnet50.out --output=logs/run_resnet50.out run_script.sh resnet50 # Submit a job
+squeue -u zzhou82 # Print the current job list
+myjobs # Print the current job list in detail
 scancel *** (JOBID)
 ```
 
-##### An example of shell scripts
+##### An example of shell scripts (in run_script.sh)
 ```
 #!/bin/bash
 #SBATCH -N 1
@@ -36,7 +40,7 @@ scancel *** (JOBID)
 ##SBATCH -p cidsegpu1
 #SBATCH -q wildfire
 #SBATCH --gres=gpu:1
-#SBATCH -t 0-240:00
+#SBATCH -t 9-23:59:59
 ##SBATCH -o slurm.%j.${1}.out
 ##SBATCH -e slurm.%j.${1}.err
 #SBATCH --mail-type=END,FAIL
@@ -49,8 +53,27 @@ module unload python/.2.7.14-tf18-gpu
 python3.6 -W ignore Genesis_ImageNet_2D.py --note autoencoder --rescale_rate 0.1 --flip_rate 0.01 --rotation_rate 0.01 --transpose_rate 0.01 --gamma_rate 0.0 --paint_rate 0.0 --outpaint_rate 0.8 --local_rate 0.0 --nonlinear_rate 0.0 --twist_rate 0.0 --blur_rate 0.0 --arch Unet --decoder upsampling --backbone $1 --batch_size 24 --input_rows 224 --input_cols 224 --input_deps 3 --crop_rows 512 --crop_cols 512 --crop_deps 3 --steps_per_epoch 5000 --worker 4 --init finetune --nb_class 3 --verbose 1 --optimizer sgd --save_samples png --data /home/zzhou82/zongwei.zhou/Models-Genesis/ImageNet/ILSVRC2012
 ```
 More examples and explanations can be found at https://rcstatus.asu.edu/agave/howto/gpu.php
+```
+#!/bin/bash
 
-Check the ASU GPU usage status here: https://rcstatus.asu.edu/agave/smallstatus.php
+#SBATCH -N 1                        # number of compute nodes
+#SBATCH -n 1                        # number of CPU cores to reserve on this compute node
+
+#SBATCH -p gpu                      # This is the recommended default partition
+###SBATCH -p cidsegpu1              # Uncomment this line to specifically callout the cidsegpu1 partition instead
+
+#SBATCH -q wildfire                 # Run job under wildfire QOS queue
+
+#SBATCH --gres=gpu:2                # Request two GPUs
+
+#SBATCH -t 0-12:00                  # wall time (D-HH:MM)
+#SBATCH -o slurm.%j.out             # STDOUT (%j = JobId)
+#SBATCH -e slurm.%j.err             # STDERR (%j = JobId)
+#SBATCH --mail-type=ALL             # Send a notification when the job starts, stops, or fails
+#SBATCH --mail-user=myemail@asu.edu # send-to address
+```
+
+Check the graphical view of Agave here: https://rcstatus.asu.edu/agave/smallstatus.php
 
 ##### Shared folder with unlimited space in ASU GPU:
 zzhou82@agave.asu.edu:/scratch/zzhou82/
