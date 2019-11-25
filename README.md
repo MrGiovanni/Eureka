@@ -1,5 +1,3 @@
-# Important bash command lines you should know
-
 # Connect to ASU VPN
 ### 1. Open Cisco AnyConnect Secure Mobility Client
 Type in: `sslvpn.asu.edu` and click `Connect`
@@ -22,9 +20,141 @@ pip install simpleitk photutils tifffile libtiff pydot --user
 sbatch --error=logs/run_resnet50.out --output=logs/run_resnet50.out run_script.sh resnet50
 squeue -u zzhou82
 scancel *** (JOBID)
-vi run_script.sh
 ```
+
+### An example of shell scripts
+```
+#!/bin/bash
+#SBATCH -N 1
+#SBATCH -n 8
+##SBATCH --mem-per-cpu 50000
+##SBATCH -p physicsgpu1
+##SBATCH -p sulcgpu2
+##SBATCH -p mrlinegpu1
+#SBATCH -p asinghargpu1
+##SBATCH -p sulcgpu1
+##SBATCH -p cidsegpu1
+#SBATCH -q wildfire
+#SBATCH --gres=gpu:1
+#SBATCH -t 0-240:00
+##SBATCH -o slurm.%j.${1}.out
+##SBATCH -e slurm.%j.${1}.err
+#SBATCH --mail-type=END,FAIL
+#SBATCH --mail-user=zzhou82@asu.edu
+
+module load tensorflow/1.8-agave-gpu
+module unload python/.2.7.14-tf18-gpu
+
+# autoencoder
+python3.6 -W ignore Genesis_ImageNet_2D.py --note autoencoder --rescale_rate 0.1 --flip_rate 0.01 --rotation_rate 0.01 --transpose_rate 0.01 --gamma_rate 0.0 --paint_rate 0.0 --outpaint_rate 0.8 --local_rate 0.0 --nonlinear_rate 0.0 --twist_rate 0.0 --blur_rate 0.0 --arch Unet --decoder upsampling --backbone $1 --batch_size 24 --input_rows 224 --input_cols 224 --input_deps 3 --crop_rows 512 --crop_cols 512 --crop_deps 3 --steps_per_epoch 5000 --worker 4 --init finetune --nb_class 3 --verbose 1 --optimizer sgd --save_samples png --data /home/zzhou82/zongwei.zhou/Models-Genesis/ImageNet/ILSVRC2012
+```
+More examples and explanations can be found at https://rcstatus.asu.edu/agave/howto/gpu.php
 
 ### Shared folder with unlimited space in ASU GPU:
 zzhou82@agave.asu.edu:/scratch/zzhou82/
 
+
+# Remotely Jupyter notebook
+### 1. Open Cisco AnyConnect Secure Mobility Client
+Type in: `sslvpn.asu.edu` and click `Connect`
+
+### 2. Type in user name (asu email) and password
+
+### 3. Set up a Jupyter notebook in the remote machine
+```
+ssh zongwei@t4-host.dhcp.asu.edu -X
+nohup jupyter notebook --no-browser --notebook-dir='/mnt/dfs/zongwei' --port=8881 > /home/zongwei/jupyter.log &
+```
+
+### 4. Get the link
+```
+cat /home/zongwei/jupyter.log
+```
+
+```
+[I 00:02:03.886 NotebookApp] Serving notebooks from local directory: /mnt/dfs/zongwei
+[I 00:02:03.886 NotebookApp] The Jupyter Notebook is running at:
+[I 00:02:03.886 NotebookApp] http://localhost:8881/?token=7cc992537c1209286361db906cff0128670858e0725925f5
+[I 00:02:03.886 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[C 00:02:03.891 NotebookApp]
+ To access the notebook, open this file in a browser:
+ file:///run/user/1201/jupyter/nbserver-25432-open.html
+ Or copy and paste one of these URLs:
+http://localhost:8881/?token=7cc992537c1209286361db906cff0128670858e0725925f5
+[W 00:02:09.161 NotebookApp] 404 GET /api/kernels/4c16c34c-ae91-45c0-a5d3-3f6a3be0dac4/channels?session_id=ea67fd77aac4414184755e7c14351c3a (127.0.0.1): Kernel does not exist: 4c16c34c-ae91-45c0-a5d3-3f6a3be0dac4
+[W 00:02:09.188 NotebookApp] 404 GET /api/kernels/4c16c34c-ae91-45c0-a5d3-3f6a3be0dac4/channels?session_id=ea67fd77aac4414184755e7c14351c3a (127.0.0.1) 41.81ms referer=None
+[I 00:02:52.752 NotebookApp] Kernel started: 4cbe272f-abf8-4751-af89-392f0c7b0890
+[I 00:02:53.058 NotebookApp] Adapting to protocol v5.1 for kernel 4cbe272f-abf8-4751-af89-392f0c7b0890
+```
+
+### 5. Copy the link and paste it to your own laptop browser. In the previous example, the link is http://localhost:8881/?token=7cc992537c1209286361db906cff0128670858e0725925f5
+
+### 6. Set up in your laptop terminal
+```
+ssh -N -f -L localhost:8881:localhost:8881 zongwei@t4-host.dhcp.asu.edu
+```
+
+### 7. Remember to kill the process in both client (laptop) and server (t4-host.dhcp.asu.edu) when finished.
+```
+lsof -ti:8881| xargs kill -9
+```
+
+# Use Github in Linux
+```
+git clone https://github.com/MrGiovanni/ModelsGenesis.git
+```
+### Push the local changes on the website
+```
+git add .
+git commit -am "make some comments "
+git push origin master
+```
+
+# Mount remote machine to MacBook
+- Credit to [Vatsal Sodha](https://github.com/vatsal-sodha)
+
+```
+brew cask install osxfuse
+brew install sshfs
+sshfs -o reconnect -o follow_symlinks -o volname=dfs -o IdentityFile=~/.ssh/id_rsa zongwei@t2-host.dhcp.asu.edu:/mnt/dfs/ /Users/zongwei.zhou/Documents/dfs/ -o volname=dfs
+sshfs -o reconnect -o follow_symlinks -o volname=asu -o IdentityFile=~/.ssh/id_rsa zzhou82@agave.asu.edu:/home/zzhou82/zongwei.zhou/ /Users/zongwei.zhou/Documents/asu/ -o volname=asu
+diskutil unmount force /Users/zongwei.zhou/Documents/dfs/
+```
+
+# Miniconda
+### Check current existing conda environments
+```
+conda env list
+```
+It returns information as following:
+```
+conda environments:
+#
+caffe /home/zongwei/miniconda3/envs/caffe
+root * /home/zongwei/miniconda3
+```
+
+### Create a new conda environment named "env_name"
+```
+conda create -n env_name python=2.7
+```
+
+### Delete a conda environment named "env_name"
+```
+conda env remove -n env_name
+```
+
+### Activate "env_name" environment (independent from other conda environments). So if you mess up one environment, it would not affect on other environment
+```
+source activate env_name
+```
+
+### Deactivate current environment
+```
+source deactivate
+```
+
+### Install the packages you may need
+```
+pip install opencv-python keras==2.1.3 tensorflow-gpu==1.4.0 pillow tqdm scikit-image sklearn photutils simpleitk
+```
