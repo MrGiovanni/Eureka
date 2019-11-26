@@ -216,7 +216,8 @@ source deactivate
 
 ##### Install the packages you may need
 ```bash
-pip install opencv-python keras==2.1.3 tensorflow-gpu==1.4.0 pillow tqdm scikit-image sklearn photutils simpleitk
+conda install matplotlib tqdm keras==2.2.4 tensorflow-gpu==1.13.1
+pip install opencv-python pillow tqdm scikit-image sklearn photutils simpleitk
 ```
 
 # Random things about Ubuntu
