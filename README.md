@@ -179,6 +179,7 @@ brew install sshfs
 sshfs -o reconnect -o follow_symlinks -o volname=dfs -o IdentityFile=~/.ssh/id_rsa zongwei@t2-host.dhcp.asu.edu:/mnt/dfs/ /Users/zongwei.zhou/Documents/dfs/ -o volname=dfs
 sshfs -o reconnect -o follow_symlinks -o volname=asu -o IdentityFile=~/.ssh/id_rsa zzhou82@agave.asu.edu:/home/zzhou82/zongwei.zhou/ /Users/zongwei.zhou/Documents/asu/ -o volname=asu
 diskutil unmount force /Users/zongwei.zhou/Documents/dfs/
+diskutil unmount force /Users/zongwei.zhou/Documents/asu/
 ```
 
 # Miniconda
