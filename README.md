@@ -123,6 +123,7 @@ Type in: `sslvpn.asu.edu` and click `Connect`
 ##### 3. Set up a Jupyter notebook in the remote machine
 ```bash
 ssh zongwei@t4-host.dhcp.asu.edu -X
+pip install jupyter # install jupyter notebook
 nohup jupyter notebook --no-browser --notebook-dir='/mnt/dfs/zongwei' --port=8881 > /home/zongwei/jupyter.log &
 ```
 
