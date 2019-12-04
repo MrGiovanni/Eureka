@@ -198,7 +198,7 @@ root * /home/zongwei/miniconda3
 
 ##### Create a new conda environment named "env_name"
 ```bash
-conda create -n env_name python=2.7
+conda create -n env_name python=2.7 -y
 ```
 
 ##### Delete a conda environment named "env_name"
