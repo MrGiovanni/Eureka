@@ -223,37 +223,10 @@ pip install opencv-python pillow tqdm scikit-image sklearn photutils simpleitk
 ```
 
 # Random things about Ubuntu
-##### Give sudoer permission
-```bash
-sudo su
-```
-
-##### Check GPU information
-```
-nvidia-smi -l 1
-```
-
-##### Check CPU information
-```
-htop
-```
-
-##### Show system path
-```
-echo $PATH | tr ":" "\n" | nl
-```
-
-##### Install .deb file
-```
-sudo dpkg -i teamviewer_12.0.71510_i386.deb
-```
-
-##### Check the size of file
-```
-ls -lh filename
-```
-
-##### Check the disc space used and left in the current address
-```
-df -h .
-```
+- Give sudoer permission: ```sudo su```
+- Check GPU information: ```nvidia-smi -l 1```
+- Check CPU information: ```htop```
+- Show system path: ```echo $PATH | tr ":" "\n" | nl```
+- Install .deb file: ```sudo dpkg -i teamviewer_12.0.71510_i386.deb```
+- Check the size of file: ```ls -lh filename```
+- Check the disc space used and left in the current address: ```df -h .```
