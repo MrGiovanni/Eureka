@@ -219,7 +219,7 @@ source deactivate
 ##### Install the packages you may need
 ```bash
 conda install matplotlib tqdm keras==2.2.4 tensorflow-gpu==1.13.1
-pip install opencv-python pillow tqdm scikit-image sklearn photutils simpleitk nibabel
+pip install opencv-python pillow tqdm scikit-image sklearn photutils simpleitk nibabel pandas
 ```
 
 # Random things about Ubuntu
