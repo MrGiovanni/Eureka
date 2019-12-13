@@ -114,6 +114,21 @@ y/e/d> y
 cd .config/rclone/
 ```
 
+# Access Bridge AI GPU
+- Credit to [Vatsal Sodha](https://github.com/vatsal-sodha)
+
+##### 1. Create an account at 
+https://portal.xsede.org/psc-bridges
+
+##### 2. Set up the password for PSC at 
+https://apr.psc.edu/autopwdreset/autopwdreset.html
+
+##### 3. Good to go!
+```bash
+ssh -Y zzhou82@bridges.psc.xsede.org
+```
+List of all modules: https://www.psc.edu/resources/software
+
 # Remotely Jupyter notebook
 ##### 1. Open Cisco AnyConnect Secure Mobility Client
 Type in: `sslvpn.asu.edu` and click `Connect`
