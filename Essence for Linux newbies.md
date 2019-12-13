@@ -129,6 +129,17 @@ ssh -Y zzhou82@bridges.psc.xsede.org
 ```
 List of all modules: https://www.psc.edu/resources/software
 
+##### Transfer the dataset into /pylon5/bc5phhp/zzhou82
+```
+scp config.py zzhou82@data.bridges.psc.edu:/pylon5/bc5phhp/zzhou82/
+```
+It has nearly unlimited space
+```
+[zzhou82@login006 zzhou82]$ df -h /pylon5/bc5phhp/zzhou82
+Filesystem                Size  Used Avail Use% Mounted on
+10.4.112.79@o2ib:/pylon5  7.8P  6.1P  1.7P  79% /pylon5
+```
+
 # Remotely Jupyter notebook
 ##### 1. Open Cisco AnyConnect Secure Mobility Client
 Type in: `sslvpn.asu.edu` and click `Connect`
