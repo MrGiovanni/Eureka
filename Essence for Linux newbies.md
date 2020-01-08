@@ -133,6 +133,11 @@ List of all modules: https://www.psc.edu/resources/software
 ```
 scp config.py zzhou82@data.bridges.psc.edu:/pylon5/bc5phhp/zzhou82/
 ```
+
+##### Transfer keras pre-trained imagenet models into BridgeAI machine
+```
+scp /home/zongwei/.keras/models/*.h5 zzhou82@data.bridges.psc.edu:/home/zzhou82/.keras/models/
+```
 It has nearly unlimited space
 ```
 [zzhou82@login006 zzhou82]$ df -h /pylon5/bc5phhp/zzhou82
