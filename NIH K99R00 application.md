@@ -1,4 +1,1 @@
-- [CV领域Paper论文常见单词(一)](https://zhuanlan.zhihu.com/p/58860096)
-- [CV 领域论文常见单词(二)](https://zhuanlan.zhihu.com/p/60049093)
-- [CV领域常见单词(三)](https://zhuanlan.zhihu.com/p/64863235)
-- [SCI写作常用句式总结一(Introduction篇)](https://zhuanlan.zhihu.com/p/74664090)
+
