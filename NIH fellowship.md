@@ -16,3 +16,6 @@ Pay attention to selecting the institute: [T204 - Career Dev Succ Rate.xls - NIH
 
 Fine one/more institutes that are aligned with my research at https://www.nih.gov/institutes-nih/list-nih-institutes-centers-offices
 - National Institute of Biomedical Imaging and Bioengineering (NIBIB)
+
+Prepare a project narrative.
+Search from [NIH reporter](https://projectreporter.nih.gov/reporter.cfm)
