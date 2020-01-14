@@ -129,6 +129,41 @@ ssh -Y zzhou82@bridges.psc.xsede.org
 ```
 List of all modules: https://www.psc.edu/resources/software
 
+##### 4. Start a job
+```bash
+sbatch --error=logs/bms.out --output=logs/bms.out run_script.sh
+```
+
+##### An example of shell scripts (in run_script.sh)
+```bash
+#!/usr/bin/env bash
+
+#SBATCH --partition=GPU-AI
+#SBATCH --nodes=1
+#SBATCH -t 48:00:00
+##SBATCH -t 24:00:00
+#SBATCH -A bc5phlp
+##SBATCH -A bc5phhp
+
+#SBATCB --ntasks-per-node=2
+#SBATCH --gres=gpu:volta16:1
+
+##SBATCB --ntasks-per-node=3
+##SBATCH --gres=gpu:volta32:1
+
+#SBATCH --mail-type=ALL                # Send a notification when the job starts, stops, or fails
+#SBATCH --mail-user=zzhou82@asu.edu     # send-to address
+
+source /etc/profile.d/modules.sh
+
+module load AI/anaconda3-5.1.0_gpu.2018-08
+source activate mask3
+
+
+python -W ignore main.py --apps bms --run 1 --cv 1 --suffix genesis-ct --task segmentation --subsetting None --data /pylon5/bc5phhp/zzhou82/BraTS --mode train
+```
+
+
 ##### Transfer the dataset into /pylon5/bc5phhp/zzhou82
 ```
 scp config.py zzhou82@data.bridges.psc.edu:/pylon5/bc5phhp/zzhou82/
