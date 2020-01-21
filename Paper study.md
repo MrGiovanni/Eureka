@@ -2,9 +2,11 @@
 
 #### Large Scale Adversarial Representation Learning [[paper](https://arxiv.org/pdf/1907.02544.pdf)] [[code](https://github.com/deepmind/deepmind-research/tree/master/bigbigan)]
 
-#### Exploiting Unlabeled Data in CNNs by Self-supervised Learning to Rank [[paper](https://arxiv.org/pdf/1902.06285.pdf)]
+#### Exploiting Unlabeled Data in CNNs by Self-supervised Learning to Rank [[paper](https://arxiv.org/pdf/1902.06285.pdf)] [[code]() (pretty good)]
 
 #### A Survey on Active Learning and Human-in-the-Loop Deep Learning for Medical Image Analysis [[paper](https://arxiv.org/pdf/1910.02923.pdf)]
+
+#### AET vs. AED: Unsupervised Representation Learning by Auto-Encoding Transformations rather than Data [[paper](https://arxiv.org/pdf/1901.04596.pdf)] [[code](https://github.com/maple-research-lab/AET)]
 
 # Learn their writing
 
