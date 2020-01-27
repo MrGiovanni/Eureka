@@ -14,8 +14,10 @@
 [博后(postdoc) K99:提高成功率不用改proposal (increase your K99 success rate)【生物faculty】](https://www.youtube.com/watch?v=T7q97mT96aw&list=PLwK5qy-SqyStCXjBLXywItsm2rAAnPmK8)
 Pay attention to selecting the institute: [T204 - Career Dev Succ Rate.xls - NIH RePORT](https://report.nih.gov/displayreport.aspx?rid=551)
 
-Fine one/more institutes that are aligned with my research at https://www.nih.gov/institutes-nih/list-nih-institutes-centers-offices
+1. Fine one/more institutes that are aligned with my research at https://www.nih.gov/institutes-nih/list-nih-institutes-centers-offices
 - National Institute of Biomedical Imaging and Bioengineering (NIBIB)
 
-Prepare a project narrative.
+2. Prepare a project narrative.
 Search from [NIH reporter](https://projectreporter.nih.gov/reporter.cfm)
+
+Start with why (youtube)
