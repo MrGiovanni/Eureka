@@ -8,6 +8,8 @@
 
 #### AET vs. AED: Unsupervised Representation Learning by Auto-Encoding Transformations rather than Data [[paper](https://arxiv.org/pdf/1901.04596.pdf)] [[code](https://github.com/maple-research-lab/AET)]
 
+#### A Simple Framework for Contrastive Learning of Visual Representations [[paper](https://arxiv.org/pdf/2002.05709.pdf)]
+
 # Learn their writing
 
 #### AlphaFold: Improved protein structure prediction using potentials from deep learning [[paper](https://www.nature.com/articles/s41586-019-1923-7.pdf)] [[code](https://github.com/deepmind/deepmind-research/tree/master/alphafold_casp13)]
