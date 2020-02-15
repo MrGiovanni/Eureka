@@ -8,6 +8,11 @@
 - [SCI写作常用句式总结一(Introduction篇)](https://zhuanlan.zhihu.com/p/74664090)
 - [CVPR 2020评审结果放出，旷视南京研究院负责人浅谈学术论文rebuttal](https://www.jiqizhixin.com/articles/2020-02-02-2)
 
+### How to Draft a Good Discussion Section
+- [PubmedPlus：都说论文的"Discussion"部分很难写，那是因为你不知道这些技巧！](https://zhuanlan.zhihu.com/p/26935317)
+- [吴博士聊科研：如何写好SCI论文的讨论部分？](https://zhuanlan.zhihu.com/p/27134532)
+- [论文中最重要的discussion部分该这样写！（附论文写作参考）](http://www.sztspi.com/archives/22000.html)
+
 # Learning to Review
 - [Reviewing Guideline for ICLR2020](https://iclr.cc/Conferences/2020/ReviewerGuide)
 
