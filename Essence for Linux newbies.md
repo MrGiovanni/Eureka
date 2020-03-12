@@ -296,3 +296,5 @@ pip install opencv-python pillow tqdm scikit-image sklearn photutils simpleitk n
 - Install .deb file: ```sudo dpkg -i teamviewer_12.0.71510_i386.deb```
 - Check the size of file: ```ls -lh filename```
 - Check the disc space used and left in the current address: ```df -h .```
+- Compress a directory/file: ```tar -czvf name-of-archive.tar.gz /path/to/directory-or-file```
+- Extract an archive: ```tar -xzvf archive.tar.gz```
