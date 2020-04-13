@@ -2,6 +2,7 @@
 
 ##### Official guideline
 [Pathway to Independence Award](https://researchtraining.nih.gov/programs/career-development/k99-r00)
+[Review criteria](https://grants.nih.gov/grants/guide/pa-files/PA-19-195.html) Check it while writing each section.
 
 ##### Blogs
 [A Comprehensive Guide to Applying for the NIH K99/R00](http://www.brains-explained.com/guide-to-applying-for-the-k99-r00/)
