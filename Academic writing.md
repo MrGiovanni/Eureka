@@ -23,6 +23,7 @@
 
 # Learning to Review
 - [Reviewing Guideline for ICLR2020](https://iclr.cc/Conferences/2020/ReviewerGuide)
+- [CHECKLIST OF REVIEW CRITERIA](https://journals.lww.com/academicmedicine/Fulltext/2001/09000/Appendix_1__Checklist_of_Review_Criteria.37.aspx)
 
 # Learning to Talk
 - [How to give a great research talk](https://www.microsoft.com/en-us/research/wp-content/uploads/2016/07/How-to-give-a-great-research-talk.pdf)
