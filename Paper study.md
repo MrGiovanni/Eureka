@@ -13,3 +13,5 @@
 # Learn their writing
 
 #### AlphaFold: Improved protein structure prediction using potentials from deep learning [[paper](https://www.nature.com/articles/s41586-019-1923-7.pdf)] [[code](https://github.com/deepmind/deepmind-research/tree/master/alphafold_casp13)]
+
+#### A critical analysis of self-supervision, or what we can learn from a single image [[paper](https://openreview.net/pdf?id=B1esx6EYvr)] [[code](https://github.com/yukimasano/linear-probes)]
