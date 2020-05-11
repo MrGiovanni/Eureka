@@ -17,3 +17,5 @@
 #### A critical analysis of self-supervision, or what we can learn from a single image [[paper](https://openreview.net/pdf?id=B1esx6EYvr)] [[code](https://github.com/yukimasano/linear-probes)]
 
 #### How transferable are features in deep neural networks? [[paper](https://papers.nips.cc/paper/5347-how-transferable-are-features-in-deep-neural-networks.pdf)]
+
+#### Do Better ImageNet Models Transfer Better? [[paper](http://openaccess.thecvf.com/content_CVPR_2019/papers/Kornblith_Do_Better_ImageNet_Models_Transfer_Better_CVPR_2019_paper.pdf)]
