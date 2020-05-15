@@ -1,3 +1,13 @@
+# Vocabulary
+- Alternative: an additional choice; a possible or remaining choice
+- Assessment: an evaluation of something
+- Context: parts of a statement that surround a specific word or phrase
+- Factor: something that contributes to a particular result
+- Function: the purpose for which something is designed
+- Identified: to recognize something or someone
+- Primary: the first of importance
+
+
 # Learning to Write
 - [Manchester Academic Phrasebank](http://www.phrasebank.manchester.ac.uk/)
 - [Academic Phrasebank – The Largest Collection of Academic Phrases](https://www.ref-n-write.com/trial/academic-phrasebank/)
