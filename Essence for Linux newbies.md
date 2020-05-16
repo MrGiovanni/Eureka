@@ -241,6 +241,7 @@ git push origin master
 - Credit to [Vatsal Sodha](https://github.com/vatsal-sodha)
 
 ```bash
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 brew cask install osxfuse
 brew install sshfs
 sshfs -o reconnect -o follow_symlinks -o volname=dfs -o IdentityFile=~/.ssh/id_rsa zongwei@t2-host.dhcp.asu.edu:/mnt/dfs/ /Users/zongwei.zhou/Documents/dfs/ -o volname=dfs
