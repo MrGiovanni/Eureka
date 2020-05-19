@@ -240,6 +240,7 @@ git push origin master
 # Mount remote machine to MacBook
 - Credit to [Vatsal Sodha](https://github.com/vatsal-sodha)
 
+Download and install FUSE from https://github.com/osxfuse/osxfuse/releases/tag/osxfuse-3.10.4
 ```bash
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 brew cask install osxfuse
