@@ -300,3 +300,4 @@ pip install opencv-python pillow tqdm scikit-image sklearn photutils simpleitk n
 - Check the disc space used and left in the current address: ```df -h .```
 - Compress a directory/file: ```tar -czvf name-of-archive.tar.gz /path/to/directory-or-file```
 - Extract an archive: ```tar -xzvf archive.tar.gz```
+- Delete files forever: ```/bin/rm -rf /mnt/local/zongwei/filename```
