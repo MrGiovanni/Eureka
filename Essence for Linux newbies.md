@@ -169,6 +169,10 @@ python -W ignore main.py --apps bms --run 1 --cv 1 --suffix genesis-ct --task se
 scp config.py zzhou82@data.bridges.psc.edu:/pylon5/bc5phhp/zzhou82/
 ```
 
+```
+projects
+```
+
 ##### Transfer keras pre-trained imagenet models into BridgeAI machine
 ```
 scp /home/zongwei/.keras/models/*.h5 zzhou82@data.bridges.psc.edu:/home/zzhou82/.keras/models/
