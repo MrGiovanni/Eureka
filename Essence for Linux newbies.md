@@ -304,3 +304,4 @@ pip install opencv-python pillow tqdm scikit-image sklearn photutils simpleitk n
 - Compress a directory/file: ```tar -czvf name-of-archive.tar.gz /path/to/directory-or-file```
 - Extract an archive: ```tar -xzvf archive.tar.gz```
 - Delete files forever: ```/bin/rm -rf /mnt/local/zongwei/filename```
+- Grant permission to a folder and files: ```chmod -R 777 *```
