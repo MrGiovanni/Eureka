@@ -17,6 +17,7 @@
 - [CV领域常见单词(三)](https://zhuanlan.zhihu.com/p/64863235)
 - [SCI写作常用句式总结一(Introduction篇)](https://zhuanlan.zhihu.com/p/74664090)
 - [CVPR 2020评审结果放出，旷视南京研究院负责人浅谈学术论文rebuttal](https://www.jiqizhixin.com/articles/2020-02-02-2)
+- [SCI论文Introduction常用句式总结](https://posts.careerengine.us/p/5f43e56372bf806f964b92e3)
 - [易搜搭ESODA](http://www.esoda.org/)：清华HCI Lab工作室出品的一款适合国人英语写作的词组搭配查询工具。可切换具体研究方向的论文语料库，展示相关的可替换用法，支持中英混搜。
 
 ### How to Draft a Good Discussion Section
