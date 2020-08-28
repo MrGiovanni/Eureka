@@ -7,12 +7,13 @@ module load anaconda/py3
 conda create -n env_name python=3.7
 source activate env_name
 conda install pytorch torchvision cudatoolkit=10.2 -c pytorch
+pip install --upgrade batchgenerators hiddenlayer Ipython graphviz
+
 git clone https://github.com/NVIDIA/apex
 cd apex
 sbatch --error=apex_install.out --output=apex_install.out apex_model.sh
 
 cd nnUNet/nnunet
-pip install --upgrade batchgenerators hiddenlayer Ipython graphviz
 python paths.py
 cd nnUnet/
 pip install -e .
