@@ -2,7 +2,7 @@
 
 Acknowlegement: We thank Shivam Bajpai for reproducing nnU-Net. Thank Fabian Isensee for building this fantastic nnU-Net project.
 
-'''shell
+```bash
 module load anaconda/py3
 conda create -n env_name python=3.7
 source activate env_name
@@ -22,4 +22,4 @@ sbatch --error=logs/plan.out --output=logs/plan.out plan.sh
 sbatch --error=logs/lung0.out --output=logs/lung0.out lung_mode0.sh
 
 tail -F logs/
-'''
+```
