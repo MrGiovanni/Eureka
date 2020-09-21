@@ -10,6 +10,7 @@
 [How to write a K99/R00 (IN 3 WEEKS)](http://pathway2insanity.blogspot.com/)
 [NIH Grant Applications: The Anatomy of a Specific Aims Page](https://www.biosciencewriters.com/NIH-Grant-Applications-The-Anatomy-of-a-Specific-Aims-Page.aspx)
 [How to Write a Successful K99 - One Canuck’s Perspective](https://www.jordandward.com/k99-grant-writing.html)
+[The NIH Significance and Innovation Sections: demystified](https://morganonscience.com/grantwriting/significanceinnovationdemystified/)
 
 ##### Videos
 [博后(postdoc) K99:提高成功率不用改proposal (increase your K99 success rate)【生物faculty】](https://www.youtube.com/watch?v=T7q97mT96aw&list=PLwK5qy-SqyStCXjBLXywItsm2rAAnPmK8)
