@@ -8,6 +8,11 @@
 - Primary: the first of importance
 
 
+# Great Writing Examples
+
+- National Lung Screening Trial Research Team, 2011. Reduced lung-cancer mortality with low-dose computed tomographic screening. New England Journal of Medicine, 365(5), pp.395-409.
+
+
 # Learning to Write
 - [Manchester Academic Phrasebank](http://www.phrasebank.manchester.ac.uk/)
 - [Academic Phrasebank – The Largest Collection of Academic Phrases](https://www.ref-n-write.com/trial/academic-phrasebank/)
