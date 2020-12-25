@@ -6,10 +6,10 @@ Type in: `sslvpn.asu.edu` and click `Connect`
 
 ##### 3. Remotely access the lab machines
 ```bash
-ssh zongwei@t4-host.dhcp.asu.edu -X
+ssh zongwei@t2-host.hfc.dhcp.asu.edu -X
 exit
-scp -r zongwei@t4-host.dhcp.asu.edu:/mnt/dfs/zongwei /Users/zongwei.zhou/
-scp zongwei@t4-host.dhcp.asu.edu:/mnt/dfs/zongwei/debug.py /Users/zongwei.zhou/
+scp -r zongwei@t2-host.hfc.dhcp.asu.edu:/mnt/dfs/zongwei /Users/zongwei.zhou/
+scp zongwei@t2-host.hfc.dhcp.asu.edu:/mnt/dfs/zongwei/debug.py /Users/zongwei.zhou/
 ```
 
 # Access ASU GPU cluster
@@ -191,7 +191,7 @@ Type in: `sslvpn.asu.edu` and click `Connect`
 
 ##### 3. Set up a Jupyter notebook in the remote machine
 ```bash
-ssh zongwei@t4-host.dhcp.asu.edu -X
+ssh zongwei@t2-host.hfc.dhcp.asu.edu -X
 pip install jupyter # install jupyter notebook
 nohup jupyter notebook --no-browser --notebook-dir='/mnt/dfs/zongwei' --port=8881 > /home/zongwei/jupyter.log &
 ```
@@ -221,10 +221,10 @@ http://localhost:8881/?token=7cc992537c1209286361db906cff0128670858e0725925f5
 
 ##### 6. Set up in your laptop terminal
 ```bash
-ssh -N -f -L localhost:8881:localhost:8881 zongwei@t4-host.dhcp.asu.edu
+ssh -N -f -L localhost:8881:localhost:8881 zongwei@t2-host.hfc.dhcp.asu.edu
 ```
 
-##### 7. Remember to kill the process in both client (laptop) and server (t4-host.dhcp.asu.edu) when finished.
+##### 7. Remember to kill the process in both client (laptop) and server (t2-host.hfc.dhcp.asu.edu) when finished.
 ```bash
 lsof -ti:8881| xargs kill -9
 ```
@@ -248,7 +248,7 @@ Download and install FUSE from https://github.com/osxfuse/osxfuse/releases/tag/o
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 brew cask install osxfuse
 brew install sshfs
-sshfs -o reconnect -o follow_symlinks -o volname=dfs -o IdentityFile=~/.ssh/id_rsa zongwei@t2-host.dhcp.asu.edu:/mnt/dfs/ /Users/zongwei.zhou/Documents/dfs/ -o volname=dfs
+sshfs -o reconnect -o follow_symlinks -o volname=dfs -o IdentityFile=~/.ssh/id_rsa zongwei@t2-host.hfc.dhcp.asu.edu:/mnt/dfs/ /Users/zongwei.zhou/Documents/dfs/ -o volname=dfs
 sshfs -o reconnect -o follow_symlinks -o volname=asu -o IdentityFile=~/.ssh/id_rsa zzhou82@agave.asu.edu:/home/zzhou82/zongwei.zhou/ /Users/zongwei.zhou/Documents/asu/ -o volname=asu
 diskutil unmount force /Users/zongwei.zhou/Documents/dfs/
 diskutil unmount force /Users/zongwei.zhou/Documents/asu/
