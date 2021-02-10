@@ -6,6 +6,7 @@
 - Function: the purpose for which something is designed
 - Identified: to recognize something or someone
 - Primary: the first of importance
+- Pronounced: remarkable, noticeable
 
 
 # Great Writing Examples
