@@ -7,6 +7,7 @@
 - Identified: to recognize something or someone
 - Primary: the first of importance
 - Pronounced: remarkable, noticeable
+- Mitigate: reduce
 
 
 # Great Writing Examples
