@@ -8,6 +8,8 @@
 - Primary: the first of importance
 - Pronounced: remarkable, noticeable
 - Mitigate: reduce
+- Dedicated: for specific purpose
+- Seamless: smooth
 
 
 # Great Writing Examples
