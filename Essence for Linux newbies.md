@@ -78,6 +78,9 @@ Check the graphical view of Agave here: https://rcstatus.asu.edu/agave/smallstat
 ##### Shared folder with unlimited space in ASU GPU:
 zzhou82@agave.asu.edu:/scratch/zzhou82/
 
+##### Transfer files to Google Drive
+- Documentation: https://asurc.atlassian.net/wiki/spaces/RC/pages/349175850/Configuring+Globus+Collections
+
 ##### rclone
 - Documentation: https://asurc.atlassian.net/wiki/spaces/RC/pages/61833262/Google+Drive+rclone
 
