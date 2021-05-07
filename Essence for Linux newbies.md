@@ -6,10 +6,10 @@ Type in: `sslvpn.asu.edu` and click `Connect`
 
 ##### 3. Remotely access the lab machines
 ```bash
-ssh zongwei@t2-host.hfc.dhcp.asu.edu -X
+ssh zongwei@r3-host.hfc.dhcp.asu.edu -X
 exit
-scp -r zongwei@t2-host.hfc.dhcp.asu.edu:/mnt/dfs/zongwei /Users/zongwei.zhou/
-scp zongwei@t2-host.hfc.dhcp.asu.edu:/mnt/dfs/zongwei/debug.py /Users/zongwei.zhou/
+scp -r zongwei@r3-host.hfc.dhcp.asu.edu:/mnt/dfs/zongwei /Users/zongwei.zhou/
+scp zongwei@r3-host.hfc.dhcp.asu.edu:/mnt/dfs/zongwei/debug.py /Users/zongwei.zhou/
 ```
 
 # Access ASU GPU cluster
@@ -81,41 +81,6 @@ zzhou82@agave.asu.edu:/scratch/zzhou82/
 ##### Transfer files to Google Drive
 - Documentation: https://asurc.atlassian.net/wiki/spaces/RC/pages/349175850/Configuring+Globus+Collections
 
-##### rclone
-- Documentation: https://asurc.atlassian.net/wiki/spaces/RC/pages/61833262/Google+Drive+rclone
-
-1. Log into the [Google API Console](https://console.developers.google.com/) with your Google account.
-2. Create a new project (ChestX-ray14)
-3. Enable API (search for `Google Drive API` in the box)
-4. Click `Credentials`, select `Google Drive API`, `Other UI (e.g. Windows, CLI tool)`, and `user data`
-
-- interactive -t 15 -p debug -q wildfire
-- module load rclone/1.43
-- rclone config
-```
-2019/11/25 14:51:04 NOTICE: Config file "/home/zzhou82/.config/rclone/rclone.conf" not found - using defaults
-No remotes found - make a new one
-n) New remote
-s) Set configuration password
-q) Quit config
-n/s/q> n
-name> TCTEST
-Storage> 11
-client_id> ***
-client_secret> ***
-scope> 1
-root_folder_id> 
-Edit advanced config? (y/n)
-y) Yes
-n) No
-y/n> n
-y/n> n
-Enter verification code> ***
-y/n> y
-Enter a Team Drive ID> 1
-y/e/d> y
-cd .config/rclone/
-```
 
 # Access Bridge AI GPU
 - Credit to [Vatsal Sodha](https://github.com/vatsal-sodha)
