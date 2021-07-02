@@ -53,7 +53,7 @@ python paths.py
 pip install --upgrade git+https://github.com/FabianIsensee/hiddenlayer.git@more_plotted_details#egg=hiddenlayer
 
 cd pytorch
-pip install --upgrade setuptools
+pip install --upgrade setuptools torchsummary ipython graphviz
 pip install -e .
 
 nnUNet_plan_and_preprocess -t XXX --verify_dataset_integrity
