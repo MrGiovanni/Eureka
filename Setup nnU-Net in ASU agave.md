@@ -37,6 +37,30 @@ pip install -e .
 nnUNet_plan_and_preprocess -t XXX --verify_dataset_integrity
 ```
 
+### Adjust the depth of nnU-Net
+```bash
+cp -r nnUNet nnUNetDep1
+cd nnUNetDep1/nnunet
+vi path.py
+
+base = "/home/zzhou82/zongwei.zhou/UNetPlusPlus/pytorch"
+preprocessing_output_dir = "/home/zzhou82/zongwei.zhou/UNetPlusPlus/pytorch/nnUNet_preprocessed"
+network_training_output_dir_base = "/home/zzhou82/zongwei.zhou/UNetPlusPlus/pytorch/RESULTS_FOLDER"
+
+python paths.py
+
+cd nnUNetDep1
+pip install -e .
+
+vi change_depth.py
+
+FILE_NAME = '*nnUNetDep1*/nnUNet_preprocessed/Task555_FLARE/nnUNetPlansv2.1_plans_3D.pkl'
+plan['plans_per_stage'][1]['conv_kernel_sizes'] = [[3,3,3],[3,3,3]]
+plan['plans_per_stage'][1]['pool_op_kernel_sizes'] = [[2,2,2]]
+
+python change_depth.py
+```
+
 ### Old version:
 ```bash
 module load anaconda/py3
