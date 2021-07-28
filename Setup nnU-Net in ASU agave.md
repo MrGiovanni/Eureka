@@ -17,7 +17,7 @@ cd UNetPlusPlus/pytorch
 pip install git+https://github.com/MIC-DKFZ/batchgenerators.git
 
 cd nnunet
-vi path.py
+vi paths.py
 #base = os.environ['nnUNet_raw_data_base'] if "nnUNet_raw_data_base" in os.environ.keys() else None
 #preprocessing_output_dir = os.environ['nnUNet_preprocessed'] if "nnUNet_preprocessed" in os.environ.keys() else None
 #network_training_output_dir_base = os.path.join(os.environ['RESULTS_FOLDER']) if "RESULTS_FOLDER" in os.environ.keys() else None
@@ -41,7 +41,7 @@ nnUNet_plan_and_preprocess -t XXX --verify_dataset_integrity
 ```bash
 cp -r nnUNet nnUNetDep1
 cd nnUNetDep1/nnunet
-vi path.py
+vi paths.py
 
 base = "/home/zzhou82/zongwei.zhou/UNetPlusPlus/pytorch"
 preprocessing_output_dir = "/home/zzhou82/zongwei.zhou/UNetPlusPlus/pytorch/nnUNet_preprocessed"
