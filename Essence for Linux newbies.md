@@ -214,12 +214,14 @@ git push origin master
 Download and install FUSE from https://github.com/osxfuse/osxfuse/releases/tag/osxfuse-3.10.4
 ```bash
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-brew cask install osxfuse
+brew install osxfuse
 brew install sshfs
 sshfs -o reconnect -o follow_symlinks -o volname=dfs -o IdentityFile=~/.ssh/id_rsa zongwei@t2-host.hfc.dhcp.asu.edu:/mnt/dfs/ /Users/zongwei.zhou/Documents/dfs/ -o volname=dfs
 sshfs -o reconnect -o follow_symlinks -o volname=asu -o IdentityFile=~/.ssh/id_rsa zzhou82@agave.asu.edu:/home/zzhou82/zongwei.zhou/ /Users/zongwei.zhou/Documents/asu/ -o volname=asu
+sshfs -o reconnect -o follow_symlinks -o volname=jhu -o IdentityFile=~/.ssh/id_rsa zzhou82@ccvl25.ccvl.jhu.edu:/data/zzhou82/ /Users/zongwei.zhou/Documents/jhu/ -o volname=jhu
 diskutil unmount force /Users/zongwei.zhou/Documents/dfs/
 diskutil unmount force /Users/zongwei.zhou/Documents/asu/
+diskutil unmount force /Users/zongwei.zhou/Documents/jhu/
 ```
 
 # Miniconda
