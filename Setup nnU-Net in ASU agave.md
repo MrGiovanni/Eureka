@@ -54,9 +54,8 @@ pip install -e .
 
 vi change_depth.py
 
-FILE_NAME = '*nnUNetDep1*/nnUNet_preprocessed/Task555_FLARE/nnUNetPlansv2.1_plans_3D.pkl'
-plan['plans_per_stage'][1]['conv_kernel_sizes'] = [[3,3,3],[3,3,3]]
-plan['plans_per_stage'][1]['pool_op_kernel_sizes'] = [[2,2,2]]
+plan['plans_per_stage'][1]['conv_kernel_sizes'] = [[3,3,3],[3,3,3],[3,3,3]]
+plan['plans_per_stage'][1]['pool_op_kernel_sizes'] = [[2,2,2],[1,2,2]]
 
 python change_depth.py --file nnUNet_preprocessed/Task555_FLARE/nnUNetPlansv2.1_plans_3D.pkl
 ```
