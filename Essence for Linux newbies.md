@@ -162,6 +162,7 @@ Type in: `sslvpn.asu.edu` and click `Connect`
 ssh zongwei@t2-host.hfc.dhcp.asu.edu -X
 pip install jupyter # install jupyter notebook
 nohup jupyter notebook --no-browser --notebook-dir='/mnt/dfs/zongwei' --port=8881 > /home/zongwei/jupyter.log &
+nohup jupyter notebook --no-browser --notebook-dir='/data/zzhou82' --port=8885 > /home/zzhou82/jupyter.log &
 ```
 
 ##### 4. Get the link
@@ -190,6 +191,7 @@ http://localhost:8881/?token=7cc992537c1209286361db906cff0128670858e0725925f5
 ##### 6. Set up in your laptop terminal
 ```bash
 ssh -N -f -L localhost:8881:localhost:8881 zongwei@t2-host.hfc.dhcp.asu.edu
+ssh -N -f -L localhost:8885:localhost:8885 zzhou82@ccvl25.ccvl.jhu.edu
 ```
 
 ##### 7. Remember to kill the process in both client (laptop) and server (t2-host.hfc.dhcp.asu.edu) when finished.
