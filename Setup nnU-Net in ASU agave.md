@@ -50,7 +50,7 @@ network_training_output_dir_base = "/home/zzhou82/zongwei.zhou/UNetPlusPlus/pyto
 python paths.py
 
 cd nnUNetDep1
-pip install -e .
+pip install -e . # this is needed for every configuration!
 
 vi change_depth.py
 
