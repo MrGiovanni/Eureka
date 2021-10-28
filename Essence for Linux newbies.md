@@ -22,8 +22,8 @@ scp /Users/zongwei.zhou/debug.py zzhou82@agave.asu.edu:/home/zzhou82/zongwei.zho
 pip install simpleitk photutils tifffile libtiff pydot --user
 sbatch --error=logs/run_resnet50.out --output=logs/run_resnet50.out run_script.sh resnet50 # Submit a job
 squeue -u zzhou82 # Print the current job list
-qstat -u zzhou82 | wc -l # Count the total number of current jobs (maximum 1209 jobs allowed per users)
 myjobs # Print the current job list in detail
+myjobs | wc -l # Count the total number of current jobs (maximum 1209 jobs allowed per users)
 scancel *** (JOBID)
 ```
 
