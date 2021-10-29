@@ -23,7 +23,7 @@ pip install simpleitk photutils tifffile libtiff pydot --user
 sbatch --error=logs/run_resnet50.out --output=logs/run_resnet50.out run_script.sh resnet50 # Submit a job
 squeue -u zzhou82 # Print the current job list
 myjobs # Print the current job list in detail
-myjobs | wc -l # Count the total number of current jobs (maximum 1209 jobs allowed per users)
+myjobs | wc -l # Count the total number of current jobs (maximum 1000 jobs allowed per users)
 scancel *** (JOBID)
 ```
 
