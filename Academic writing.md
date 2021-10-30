@@ -10,6 +10,7 @@
 - Mitigate: reduce
 - Dedicated: for specific purpose
 - Seamless: smooth
+- Discrepancy: difference
 
 
 # Great Writing Examples
