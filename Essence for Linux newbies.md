@@ -280,3 +280,4 @@ pip install opencv-python pillow tqdm scikit-image sklearn photutils simpleitk n
 - Delete files forever: ```/bin/rm -rf /mnt/local/zongwei/filename```
 - Grant permission to a folder and files: ```chmod -R 777 *```
 - Check the size of a directory: ```du -sh /home/zongwei```
+- Specify the GPU for a job: ```CUDA_VISIBLE_DEVICES=0 python```
