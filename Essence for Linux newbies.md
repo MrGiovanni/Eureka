@@ -282,3 +282,4 @@ pip install opencv-python pillow tqdm scikit-image sklearn photutils simpleitk n
 - Check the size of a directory: ```du -sh /home/zongwei```
 - Specify the GPU for a job: ```CUDA_VISIBLE_DEVICES=0 python```
 - Clear Google Drive cache: ```rm -rf ~/Library/Application\ Support/Google/DriveFS/```
+- Create shortcut: ```ln -s ~/Target/Folder ~/Desktop```
