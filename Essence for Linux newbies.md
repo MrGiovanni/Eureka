@@ -284,3 +284,4 @@ pip install opencv-python pillow tqdm scikit-image sklearn photutils simpleitk n
 - Clear Google Drive cache: ```rm -rf ~/Library/Application\ Support/Google/DriveFS/```
 - Create shortcut: ```ln -s ~/Target/Folder ~/Desktop```
 - Use 'll' in Mac OS: ```alias ll='ls -lGaf'```
+- Check the storage: ```du -B1 -cs /Volumes/GoogleDrive/*```
