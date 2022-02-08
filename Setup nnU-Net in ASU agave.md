@@ -14,6 +14,7 @@ pip3 install torch torchvision torchaudio
 
 git clone https://github.com/MrGiovanni/UNetPlusPlus.git
 cd UNetPlusPlus/pytorch
+pip install wheel
 pip install git+https://github.com/MIC-DKFZ/batchgenerators.git
 
 cd nnunet
@@ -32,6 +33,7 @@ pip install --upgrade git+https://github.com/FabianIsensee/hiddenlayer.git@more_
 
 cd pytorch
 pip install --upgrade setuptools torchsummary ipython graphviz
+pip install -U setuptools
 pip install -e .
 
 nnUNet_plan_and_preprocess -t XXX --verify_dataset_integrity
