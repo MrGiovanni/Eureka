@@ -217,6 +217,9 @@ git push origin master
 Download and install FUSE from https://github.com/osxfuse/osxfuse/releases/tag/osxfuse-3.10.4
 ```bash
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+echo 'eval $(/opt/homebrew/bin/brew shellenv)' >> /Users/$USER/.zprofile
+eval $(/opt/homebrew/bin/brew shellenv)
 brew install osxfuse
 brew install sshfs
 sshfs -o reconnect -o follow_symlinks -o volname=dfs -o IdentityFile=~/.ssh/id_rsa zongwei@t2-host.hfc.dhcp.asu.edu:/mnt/dfs/ /Users/zongwei.zhou/Documents/dfs/ -o volname=dfs
