@@ -288,3 +288,4 @@ pip install opencv-python pillow tqdm scikit-image sklearn photutils simpleitk n
 - Create shortcut: ```ln -s ~/Target/Folder ~/Desktop```
 - Use 'll' in Mac OS: ```alias ll='ls -lGaf'```
 - Check the storage: ```du -B1 -cs /Volumes/GoogleDrive/*```
+- Submit many jobs: ```while [ $(myjobs | wc -l) < 1000 ]; do echo 'hi'; sleep 5s; done```
