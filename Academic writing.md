@@ -11,6 +11,7 @@
 - Dedicated: for specific purpose
 - Seamless: smooth
 - Discrepancy: difference
+- Pareto frontier
 
 
 # Great Writing Examples
