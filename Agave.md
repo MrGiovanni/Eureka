@@ -5,25 +5,46 @@
 ##### 1. Open Cisco AnyConnect Secure Mobility Client
 Type in: `sslvpn.asu.edu` and click `Connect`
 
-##### 2. Type in user name (`zzhou82`), password, and authentication (`phone')
+##### 2. Type in user name (`zzhou82`), password, and authentication (`phone`)
 
 # Access ASU GPU Cluster
 - Credit to [ASU Research Computing](https://rcstatus.asu.edu/agave/)
 - For any assistance please contact: [support@hpchelp.asu.edu](support@hpchelp.asu.edu)
 ##### Create an account at https://cores.research.asu.edu/research-computing/about-rc then you are good to go
 
+##### Some basic commands
+
 ```bash
-ssh -Y zzhou82@agave.asu.edu
-scp /Users/zongwei.zhou/debug.py zzhou82@agave.asu.edu:/home/zzhou82/zongwei.zhou/ # Transferring files
+ssh -Y zzhou82@agave.asu.edu    # Log in to Agave
+scp /Users/zongwei.zhou/debug.py zzhou82@agave.asu.edu:/home/zzhou82/zongwei.zhou/  # Transferring files
 pip install simpleitk photutils tifffile libtiff pydot --user
 sbatch --error=logs/run_resnet50.out --output=logs/run_resnet50.out run_script.sh resnet50 # Submit a job
-squeue -u zzhou82 # Print the current job list
-myjobs # Print the current job list in detail
-myjobs | wc -l # Count the total number of current jobs (maximum 1000 jobs allowed per users)
-scancel *** (JOBID)
+squeue -u zzhou82               # Print the current job list
+myjobs                          # Print the current job list in detail
+myjobs | wc -l                  # Count the total number of current jobs (maximum 1000 jobs allowed per users)
+scancel *** (JOBID)             # Cancel a job
 ```
 
-##### An example of shell scripts (in run_script.sh)
+# Setup Virual Environment
+
+```bash
+module load anaconda/py3
+cd /scratch/zzhou82/environments
+python3 -m venv demo
+```
+
+# An Example
+
+```bash
+source /scratch/zzhou82/environments/demo/bin/activate
+cd /scratch/zzhou82
+mkdir demo
+cd demo
+git clone https://github.com/MrGiovanni/ColdStart.git
+bash run.sh bloodmnist
+```
+
+##### An example of shell scripts (in `hg.sh`)
 ```
 #!/bin/bash
 #SBATCH -N 1
@@ -49,6 +70,7 @@ module unload python/.2.7.14-tf18-gpu
 # autoencoder
 python3.6 -W ignore Genesis_ImageNet_2D.py --note autoencoder --rescale_rate 0.1 --flip_rate 0.01 --rotation_rate 0.01 --transpose_rate 0.01 --gamma_rate 0.0 --paint_rate 0.0 --outpaint_rate 0.8 --local_rate 0.0 --nonlinear_rate 0.0 --twist_rate 0.0 --blur_rate 0.0 --arch Unet --decoder upsampling --backbone $1 --batch_size 24 --input_rows 224 --input_cols 224 --input_deps 3 --crop_rows 512 --crop_cols 512 --crop_deps 3 --steps_per_epoch 5000 --worker 4 --init finetune --nb_class 3 --verbose 1 --optimizer sgd --save_samples png --data /home/zzhou82/zongwei.zhou/Models-Genesis/ImageNet/ILSVRC2012
 ```
+
 More examples and explanations can be found at https://rcstatus.asu.edu/agave/howto/gpu.php
 ```
 #!/bin/bash
