@@ -23,6 +23,7 @@ pip install simpleitk photutils tifffile libtiff pydot --user
 sbatch --error=logs/run_resnet50.out --output=logs/run_resnet50.out run_script.sh resnet50 # Submit a job
 squeue -u zzhou82 # Print the current job list
 myjobs # Print the current job list in detail
+myjobs | wc -l # Count the total number of current jobs (maximum 1000 jobs allowed per users)
 scancel *** (JOBID)
 ```
 
@@ -162,6 +163,7 @@ Type in: `sslvpn.asu.edu` and click `Connect`
 ssh zongwei@t2-host.hfc.dhcp.asu.edu -X
 pip install jupyter # install jupyter notebook
 nohup jupyter notebook --no-browser --notebook-dir='/mnt/dfs/zongwei' --port=8881 > /home/zongwei/jupyter.log &
+nohup jupyter notebook --no-browser --notebook-dir='/data/zzhou82' --port=8885 > /home/zzhou82/jupyter.log &
 ```
 
 ##### 4. Get the link
@@ -190,6 +192,7 @@ http://localhost:8881/?token=7cc992537c1209286361db906cff0128670858e0725925f5
 ##### 6. Set up in your laptop terminal
 ```bash
 ssh -N -f -L localhost:8881:localhost:8881 zongwei@t2-host.hfc.dhcp.asu.edu
+ssh -N -f -L localhost:8885:localhost:8885 zzhou82@ccvl25.ccvl.jhu.edu
 ```
 
 ##### 7. Remember to kill the process in both client (laptop) and server (t2-host.hfc.dhcp.asu.edu) when finished.
@@ -214,6 +217,9 @@ git push origin master
 Download and install FUSE from https://github.com/osxfuse/osxfuse/releases/tag/osxfuse-3.10.4
 ```bash
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+echo 'eval $(/opt/homebrew/bin/brew shellenv)' >> /Users/$USER/.zprofile
+eval $(/opt/homebrew/bin/brew shellenv)
 brew install osxfuse
 brew install sshfs
 sshfs -o reconnect -o follow_symlinks -o volname=dfs -o IdentityFile=~/.ssh/id_rsa zongwei@t2-host.hfc.dhcp.asu.edu:/mnt/dfs/ /Users/zongwei.zhou/Documents/dfs/ -o volname=dfs
@@ -277,3 +283,9 @@ pip install opencv-python pillow tqdm scikit-image sklearn photutils simpleitk n
 - Delete files forever: ```/bin/rm -rf /mnt/local/zongwei/filename```
 - Grant permission to a folder and files: ```chmod -R 777 *```
 - Check the size of a directory: ```du -sh /home/zongwei```
+- Specify the GPU for a job: ```CUDA_VISIBLE_DEVICES=0 python```
+- Clear Google Drive cache: ```rm -rf ~/Library/Application\ Support/Google/DriveFS/```
+- Create shortcut: ```ln -s ~/Target/Folder ~/Desktop```
+- Use 'll' in Mac OS: ```alias ll='ls -lGaf'```
+- Check the storage: ```du -B1 -cs /Volumes/GoogleDrive/*```
+- Submit many jobs: ```while [ $(myjobs | wc -l) < 1000 ]; do echo 'hi'; sleep 5s; done```

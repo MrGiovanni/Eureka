@@ -14,6 +14,7 @@ pip3 install torch torchvision torchaudio
 
 git clone https://github.com/MrGiovanni/UNetPlusPlus.git
 cd UNetPlusPlus/pytorch
+pip install wheel
 pip install git+https://github.com/MIC-DKFZ/batchgenerators.git
 
 cd nnunet
@@ -32,6 +33,7 @@ pip install --upgrade git+https://github.com/FabianIsensee/hiddenlayer.git@more_
 
 cd pytorch
 pip install --upgrade setuptools torchsummary ipython graphviz
+pip install -U setuptools
 pip install -e .
 
 nnUNet_plan_and_preprocess -t XXX --verify_dataset_integrity
@@ -50,15 +52,16 @@ network_training_output_dir_base = "/home/zzhou82/zongwei.zhou/UNetPlusPlus/pyto
 python paths.py
 
 cd nnUNetDep1
-pip install -e .
+pip install -e . # this is needed for every configuration!
 
 vi change_depth.py
 
-FILE_NAME = '*nnUNetDep1*/nnUNet_preprocessed/Task555_FLARE/nnUNetPlansv2.1_plans_3D.pkl'
-plan['plans_per_stage'][1]['conv_kernel_sizes'] = [[3,3,3],[3,3,3]]
-plan['plans_per_stage'][1]['pool_op_kernel_sizes'] = [[2,2,2]]
+plan['plans_per_stage'][1]['conv_kernel_sizes'] = [[3,3,3],[3,3,3],[3,3,3]]
+plan['plans_per_stage'][1]['pool_op_kernel_sizes'] = [[2,2,2],[1,2,2]]
 
-python change_depth.py
+python change_depth.py --file nnUNet_preprocessed/Task555_FLARE/nnUNetPlansv2.1_plans_3D.pkl
+
+CUDA_VISIBLE_DEVICES=1 nnUNet_train 3d_fullres nnUNetTrainerV2 Task555_FLARE 0
 ```
 
 ### Old version:
