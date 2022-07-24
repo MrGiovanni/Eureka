@@ -37,6 +37,7 @@ python3 -m venv demo
 
 ```bash
 source /scratch/zzhou82/environments/demo/bin/activate
+pip3 install torch torchvision torchaudio   # Install required packages
 cd /scratch/zzhou82
 mkdir demo
 cd demo
@@ -50,12 +51,12 @@ bash run.sh bloodmnist
 #SBATCH -N 1
 #SBATCH -n 8
 ##SBATCH --mem-per-cpu 50000
-##SBATCH -p physicsgpu1
+##SBATCH -p physicsgpu1     # Suggested
 ##SBATCH -p sulcgpu2
 ##SBATCH -p mrlinegpu1
-#SBATCH -p asinghargpu1
+#SBATCH -p asinghargpu1     # Suggested
 ##SBATCH -p sulcgpu1
-##SBATCH -p cidsegpu1
+##SBATCH -p cidsegpu1       # Suggested
 #SBATCH -q wildfire
 #SBATCH --gres=gpu:1
 #SBATCH -t 9-23:59:59
@@ -67,8 +68,7 @@ bash run.sh bloodmnist
 module load tensorflow/1.8-agave-gpu
 module unload python/.2.7.14-tf18-gpu
 
-# autoencoder
-python3.6 -W ignore Genesis_ImageNet_2D.py --note autoencoder --rescale_rate 0.1 --flip_rate 0.01 --rotation_rate 0.01 --transpose_rate 0.01 --gamma_rate 0.0 --paint_rate 0.0 --outpaint_rate 0.8 --local_rate 0.0 --nonlinear_rate 0.0 --twist_rate 0.0 --blur_rate 0.0 --arch Unet --decoder upsampling --backbone $1 --batch_size 24 --input_rows 224 --input_cols 224 --input_deps 3 --crop_rows 512 --crop_cols 512 --crop_deps 3 --steps_per_epoch 5000 --worker 4 --init finetune --nb_class 3 --verbose 1 --optimizer sgd --save_samples png --data /home/zzhou82/zongwei.zhou/Models-Genesis/ImageNet/ILSVRC2012
+python3.6 -W ignore main.py --run $1 --task $2 --partial $3 --init $4
 ```
 
 More examples and explanations can be found at https://rcstatus.asu.edu/agave/howto/gpu.php
