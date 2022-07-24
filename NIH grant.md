@@ -2,6 +2,21 @@
 
 ##### Get feedback
 
+- Email PO with the "specific aim" page, schedule zoom, generalizable multi-diseases check titles online (NIHReporter)
+- Search for templates
+
+- NIH institute selection?
+- Questions raised by reviewers?
+- Page limits for each part?
+- Useful resources online?
+- Importance of mentor / co-mentors? Mentor(s) and Co-Mentor(s) Plan, yes, support letter, evaluation letters
+- Cover letter? yes
+
+- Training, long term goal, accomplished, what is needed for independent position, can be done through K99R00. Take courses, conferences, institue provides, presentation, need some training. Candidate information oral.
+
+----
+
+
 - Were you persuaded that the proposed study should be done and that the results would help answer the question(s) asked?
 - Did the writing communicate a sense of my excitement about this project?
 - Did you find the story easy to follow? Were there parts that sidetracked the storyline?
@@ -17,6 +32,7 @@
 [Review criteria](https://grants.nih.gov/grants/guide/pa-files/PA-19-195.html) Check it while writing each section.
 
 ##### Blogs
+- [Writing a K99/R00 Grant](https://k99.sbamin.com/)
 - [A Comprehensive Guide to Applying for the NIH K99/R00](http://www.brains-explained.com/guide-to-applying-for-the-k99-r00/)
 - [K99/R00 Reviews](http://www.brains-explained.com/k99r00-reviews/)
 - [How to write a K99/R00 (IN 3 WEEKS)](http://pathway2insanity.blogspot.com/)
@@ -29,8 +45,8 @@
 Pay attention to selecting the institute: [T204 - Career Dev Succ Rate.xls - NIH RePORT](https://report.nih.gov/displayreport.aspx?rid=551)
 
 1. Fine one/more institutes that are aligned with my research at https://www.nih.gov/institutes-nih/list-nih-institutes-centers-offices
-- National Cancer Institute (NCI) — Est. 1937
-- National Institute of Biomedical Imaging and Bioengineering (NIBIB) — Est. 2000
+- National Cancer Institute (NCI): Success rate = 46/256 = 18.0%
+- National Institute of Biomedical Imaging and Bioengineering (NIBIB): Success rate = 6/20 = 30.0%
 
 2. Prepare a project narrative.
 Search from [NIH reporter](https://projectreporter.nih.gov/reporter.cfm)
