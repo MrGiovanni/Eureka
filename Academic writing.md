@@ -12,6 +12,8 @@
 - Seamless: smooth
 - Discrepancy: difference
 - Pareto frontier
+- Formidable: inspiring fear or respect through being impressively large, powerful, intense, or capable
+- Permeate: spread throughout (something); pervade. e.g., permeate all facets of life
 
 
 # Great Writing Examples
