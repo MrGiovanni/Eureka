@@ -18,6 +18,7 @@ scp zongwei@r3-host.hfc.dhcp.asu.edu:/mnt/dfs/zongwei/debug.py /Users/zongwei.zh
 ##### Create an account at https://cores.research.asu.edu/research-computing/about-rc then you are good to go
 ```bash
 ssh -Y zzhou82@agave.asu.edu
+ssh -Y zzhou82@login.sol.rc.asu.edu
 scp /Users/zongwei.zhou/debug.py zzhou82@agave.asu.edu:/home/zzhou82/zongwei.zhou/ # Transferring files
 pip install simpleitk photutils tifffile libtiff pydot --user
 sbatch --error=logs/run_resnet50.out --output=logs/run_resnet50.out run_script.sh resnet50 # Submit a job
