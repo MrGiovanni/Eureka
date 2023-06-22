@@ -26,6 +26,7 @@ squeue -u zzhou82 # Print the current job list
 myjobs # Print the current job list in detail
 myjobs | wc -l # Count the total number of current jobs (maximum 1000 jobs allowed per users)
 scancel *** (JOBID)
+scontrol show job JOBID # Check the detailed running script for JOBID
 ```
 
 ##### An example of shell scripts (in run_script.sh)
