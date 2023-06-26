@@ -14,7 +14,8 @@ scp zongwei@r3-host.hfc.dhcp.asu.edu:/mnt/dfs/zongwei/debug.py /Users/zongwei.zh
 
 # Access ASU GPU cluster
 - Credit to [ASU Research Computing](https://rcstatus.asu.edu/agave/)
-- For any assistance please contact: [support@hpchelp.asu.edu](support@hpchelp.asu.edu)
+- For any assistance, please contact: [support@hpchelp.asu.edu](support@hpchelp.asu.edu)
+- Please check [Requesting Resources on Sol](https://asurc.atlassian.net/wiki/spaces/RC/pages/1642102826/Requesting+Resources+on+Sol)
 ##### Create an account at https://cores.research.asu.edu/research-computing/about-rc then you are good to go
 ```bash
 ssh -Y zzhou82@agave.asu.edu
