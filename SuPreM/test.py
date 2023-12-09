@@ -302,7 +302,7 @@ def main():
     parser.add_argument("--weight_std", default=True)
     parser.add_argument('--model_backbone', default='unet', help='model backbone, also avaliable for swinunetr')
     parser.add_argument('--train_type', default='scratch', help='either train from scratch or transfer')
-    parser.add_argument('--percent', default=1, type=int, help='pre-training using numbers of images')
+    parser.add_argument('--percent', default=1081, type=int, help='pre-training using numbers of images')
     args = parser.parse_args()
     
     process(args=args)

@@ -58,6 +58,30 @@ def train(args, train_loader, model, optimizer):
     
     return loss_ave/len(epoch_iterator)
 
+
+def validation(model, ValLoader, args):
+    model.eval()
+    dice_stat = np.zeros((2, args.num_class))
+    post_label = AsDiscrete(to_onehot=args.num_class)
+    post_pred = AsDiscrete(argmax=True, to_onehot=args.num_class)
+    for index, batch in enumerate(tqdm(ValLoader)):
+        image, val_labels, name = batch["image"].to(args.device), batch["label"].to(args.device), batch["name"]
+        with torch.no_grad():
+            val_outputs = sliding_window_inference(image, (args.roi_x, args.roi_y, args.roi_z), 1, model, overlap=args.overlap, mode='gaussian')
+        val_labels_list = decollate_batch(val_labels)
+        val_labels_convert = [
+            post_label(val_label_tensor) for val_label_tensor in val_labels_list
+        ]
+        val_outputs_list = decollate_batch(val_outputs)
+        val_output_convert = [
+            post_pred(val_pred_tensor) for val_pred_tensor in val_outputs_list
+        ]        
+        dice_metric(y_pred=val_output_convert, y=val_labels_convert)
+    dice_array = dice_metric.aggregate()
+    mean_dice_val = dice_metric.aggregate().mean().item()
+    dice_metric.reset()
+    return mean_dice_val
+
 def process(args):
     rank = 0
 
@@ -270,6 +294,8 @@ def process(args):
 
     train_loader, train_sampler, val_loader, test_loader = get_loader(args)
 
+    best_dice = 0
+
     if rank == 0:
         writer = SummaryWriter(log_dir='out/' + args.log_name)
         print('Writing Tensorboard logs to ', 'out/' + args.log_name)
@@ -285,17 +311,31 @@ def process(args):
             writer.add_scalar('lr', scheduler.get_lr(), args.epoch)
 
         if (args.epoch % args.store_num == 0):
-            checkpoint = {
+            mean_dice = validation(model, val_loader, args)
+            if mean_dice > best_dice:
+                best_dice = mean_dice
+                checkpoint = {
+                    "net": model.state_dict(),
+                    'optimizer':optimizer.state_dict(),
+                    'scheduler': scheduler.state_dict(),
+                    "epoch": args.epoch
+                }
+                if not os.path.isdir('out/' + args.log_name):
+                    os.mkdir('out/' + args.log_name)
+                torch.save(checkpoint, 'out/' + args.log_name + '/best_model.pth')
+                print('The best model saved at epoch:', args.epoch)
+        
+        checkpoint = {
                 "net": model.state_dict(),
                 'optimizer': optimizer.state_dict(),
                 'scheduler': scheduler.state_dict(),
                 "epoch": args.epoch
             }
-            directory = 'out/' + args.log_name
-            if not os.path.isdir(directory):
-                os.mkdir(directory)
-            torch.save(checkpoint, directory + '/model_' + str(args.epoch) + '.pth')
-            print('Model saved at epoch:', args.epoch)
+        directory = 'out/' + args.log_name
+        if not os.path.isdir(directory):
+            os.mkdir(directory)
+        torch.save(checkpoint, directory + '/model.pth')
+
         args.epoch += 1
 
     dist.destroy_process_group()

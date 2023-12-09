@@ -6,3 +6,16 @@ tqdm
 fastremap
 simpleitk
 ipdb
+matplotlib
+tensorboardX
+ml-collections
+einops
+timm
+elasticdeform
+numpy
+nibabel
+scipy
+pandas
+glob2
+pytorch-lightning==1.6.4
+opencv-python
