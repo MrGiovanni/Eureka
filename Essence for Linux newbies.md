@@ -287,6 +287,7 @@ pip install opencv-python pillow tqdm scikit-image sklearn photutils simpleitk n
 - Grant permission to a folder and files: ```chmod -R 777 *```
 - Check the size of a directory: ```du -sh /home/zongwei```
 - Specify the GPU for a job: ```CUDA_VISIBLE_DEVICES=0 python```
+- Count folders in a directory: ```ls -dq 01_Multi-Atlas_Labeling_img00* | wc -l```
 - Clear Google Drive cache: ```rm -rf ~/Library/Application\ Support/Google/DriveFS/```
 - Create shortcut: ```ln -s ~/Target/Folder ~/Desktop```
 - Use 'll' in Mac OS: ```alias ll='ls -lGaf'```
