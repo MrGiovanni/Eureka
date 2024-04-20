@@ -293,3 +293,4 @@ pip install opencv-python pillow tqdm scikit-image sklearn photutils simpleitk n
 - Use 'll' in Mac OS: ```alias ll='ls -lGaf'```
 - Check the storage: ```du -B1 -cs /Volumes/GoogleDrive/*```
 - Submit many jobs: ```while [ $(myjobs | wc -l) < 1000 ]; do echo 'hi'; sleep 5s; done```
+- Delete jobs: ```fuser -k /dev/nvidia*```
